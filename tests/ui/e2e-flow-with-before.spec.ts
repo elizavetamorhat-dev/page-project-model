@@ -41,13 +41,13 @@ test('Logout', async () => {
   await expect(authPage.signInButton).toBeVisible()
 })
 
-test('Login with correct credentials and verify order creation page', async ({}) => {
+test('1. Login with correct credentials and verify order creation page', async ({}) => {
   const orderCreationPage = await authPage.signIn(USERNAME, PASSWORD)
   await expect(orderCreationPage.statusButton).toBeVisible()
   await orderCreationPage.checkInnerComponentsVisible()
 })
 
-test('Login and create order and check order found page', async ({ page }) => {
+test('2. Login and create order and check order found page', async ({ page }) => {
   const foundPage = new FoundPage(page)
   const orderInfo = {
     name: 'order',
@@ -61,7 +61,7 @@ test('Login and create order and check order found page', async ({ page }) => {
   await orderCreationPage.commentField.fill(orderInfo.comment)
   await orderCreationPage.checkCreationPopupVisible(false)
   await orderCreationPage.createOrderButton.click()
-  await page.waitForTimeout(1000)
+  await page.waitForTimeout(1500)
   await orderCreationPage.checkCreationPopupVisible(true)
   const orderId = await orderCreationPage.getOrderIdFromPopup()
   await orderCreationPage.closeCreationPopup()
@@ -69,7 +69,7 @@ test('Login and create order and check order found page', async ({ page }) => {
   await foundPage.checkElementVisibility(foundPage.orderName)
 })
 
-test('Check not found page', async ({ page }) => {
+test('3. Check not found page', async ({ page }) => {
   const notFoundPage = new NotFoundPage(page, `${SERVICE_URL}/orders/12341234123412341234`)
   const orderPage = new OrderPage(page)
 
