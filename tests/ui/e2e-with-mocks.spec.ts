@@ -4,7 +4,6 @@ import { OrderPage } from '../pages/order-page'
 import FoundPage from '../pages/found-page'
 import NotFoundPage from '../pages/not-found-page'
 
-
 const jwt =
   'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlbGl6YXZldGFtIiwiZXhwIjoxNzY3ODI2MzM2LCJpYXQiOjE3Njc4MDgzMzZ9.SxjyjDzB-_Zu9Q-uT7eJFNLRRUHKHvg1jpXlX-ytWUE2Us0z28LQi5uni5mnr1LusduEd0e542iFfYSO62iS2A'
 

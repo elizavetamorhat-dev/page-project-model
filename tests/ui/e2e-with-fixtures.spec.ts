@@ -42,8 +42,7 @@ test('TL-23-3 Find order with status DELIVERED using fixtures', async ({
   deliveredStatus,
   orderPage,
   foundPage,
-                                                                       }) => {
-
+}) => {
   await orderPage.statusButton.click()
   await orderPage.fillElement(orderPage.orderIdInputField, orderId)
   const trackOrderResponse = orderPage.page.waitForResponse('**/orders/*')

@@ -16,4 +16,3 @@ export default class FoundPage extends BasePage {
     return (await this.statusActive.innerText()).trim()
   }
 }
-

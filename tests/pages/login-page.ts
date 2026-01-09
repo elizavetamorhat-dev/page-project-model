@@ -18,7 +18,6 @@ export class LoginPage extends BasePage {
     this.passwordField = page.getByTestId('password-input')
   }
 
-
   async signIn(username: string, password: string) {
     await this.fillElement(this.usernameField, username)
     await this.fillElement(this.passwordField, password)
